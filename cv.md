@@ -1,9 +1,13 @@
 # Curriculum Vitae
 
 **Name:** Anastasia Kondratyuk
+===
 **Contact:** *anastasiakondratyuk98@gmail.com*
+===
 **Induction:** Hello World
+===
 **Skills:** HTML, CSS, JS, C, Python
+===
 **Code example:**
 
 ```
@@ -86,5 +90,7 @@ int main(int argc, char *argv[])
 ```
 
 **Working experience:** Financial Analyst, 3 years
+===
 **Education:** Belarusian National Technical University, project-manager
+===
 **English level:** B2
