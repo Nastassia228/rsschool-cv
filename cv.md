@@ -1,5 +1,5 @@
 # Curriculum Vitae
-
+********
 **Name:** Anastasia Kondratyuk
 ===
 **Contact:** *anastasiakondratyuk98@gmail.com*
