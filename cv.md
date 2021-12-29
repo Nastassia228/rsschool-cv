@@ -1,10 +1,10 @@
 # Curriculum Vitae
 
-1. Name: Anastasia Kondratyuk
-2. Contact: *anastasiakondratyuk98@gmail.com*
-3. Induction: Hello World
-4. Skills: HTML, CSS, JS, C, Python
-5. Code example: 
+**Name:** Anastasia Kondratyuk
+**Contact:** *anastasiakondratyuk98@gmail.com*
+**Induction:** Hello World
+**Skills:** HTML, CSS, JS, C, Python
+**Code example:**
 
 ```
 <!DOCTYPE html>
@@ -30,111 +30,61 @@
 </html>
 ```
 ```
-#include <cs50.h>
+#include <stdint.h>
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-// Max number of candidates
-#define MAX 9
+// Number of bytes in .wav header
+const int HEADER_SIZE = 44;
 
-// Candidates have name and vote count
-typedef struct
+int main(int argc, char *argv[])
 {
-    string name;
-    int votes;
-}
-candidate;
-
-// Array of candidates
-candidate candidates[MAX];
-
-// Number of candidates
-int candidate_count;
-int winner = 0;
-
-// Function prototypes
-bool vote(string name);
-void print_winner(void);
-
-int main(int argc, string argv[])
-{
-    // Check for invalid usage
-    if (argc < 2)
+    // Check command-line arguments
+    if (argc != 4)
     {
-        printf("Usage: plurality [candidate ...]\n");
+        printf("Usage: ./volume input.wav output.wav factor\n");
         return 1;
     }
 
-    // Populate array of candidates
-    candidate_count = argc - 1;
-    if (candidate_count > MAX)
+    // Open files and determine scaling factor
+    FILE *input = fopen(argv[1], "r");
+    if (input == NULL)
     {
-        printf("Maximum number of candidates is %i\n", MAX);
-        return 2;
-    }
-    for (int i = 0; i < candidate_count; i++)
-    {
-        candidates[i].name = argv[i + 1];
-        candidates[i].votes = 0;
+        printf("Could not open file.\n");
+        return 1;
     }
 
-    int voter_count = get_int("Number of voters: ");
-
-    // Loop over all voters
-    for (int i = 0; i < voter_count; i++)
+    FILE *output = fopen(argv[2], "w");
+    if (output == NULL)
     {
-        string name = get_string("Vote: ");
-
-        // Check for invalid vote
-        if (!vote(name))
-        {
-            printf("Invalid vote.\n");
-        }
+        printf("Could not open file.\n");
+        return 1;
     }
 
-    // Display winner of election
-    print_winner();
-}
+    float factor = atof(argv[3]);
 
-// Update vote totals given a new vote
-bool vote(string name)
-{
-    // linear search to check if the name is in the list
-    for (int j = 0; j < candidate_count; j++)
+    // TODO: Copy header from input file to output file
+    uint8_t header[HEADER_SIZE];
+    while (fread(&header, HEADER_SIZE, 1, input))
     {
-        if (strcmp(candidates[j].name, name) == 0)
-            {
-            candidates[j].votes++;
-            return true;
-            }
-    }
-    return false;
-}
-
-// Print the winner (or winners) of the election
-void print_winner(void)
-{
-    // print a winner
-    for (int k = 0; k < candidate_count; k++)
-    {
-        if (candidates[k].votes > winner)
-        {
-            winner = candidates[k].votes;
-        }
-    }
-    for (int p = 0; p < candidate_count; p++)
-    {
-        if (candidates[p].votes == winner)
-        {
-            printf("%s\n", candidates[p].name);
-        }
+        fwrite(&header, HEADER_SIZE, 1, output);
     }
 
-    return;
+    // TODO: Read samples from input file and write updated data to output file
+    int16_t buffer;
+    while (fread(&buffer, sizeof(int16_t), 1, input))
+    {
+        buffer *= factor;
+        fwrite(&buffer, sizeof(int16_t), 1, output);
+    }
+
+    // Close files
+    fclose(input);
+    fclose(output);
 }
 
 ```
 
-6. Working experience: Financial Analyst, 3 years
-7. Education: Belarusian National Technical University, project-manager
-8. English level: B2
+**Working experience:** Financial Analyst, 3 years
+**Education:** Belarusian National Technical University, project-manager
+**English level:** B2
