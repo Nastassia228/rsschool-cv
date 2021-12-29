@@ -1,13 +1,13 @@
 # Curriculum Vitae
-********
+
 **Name:** Anastasia Kondratyuk
-===
+********
 **Contact:** *anastasiakondratyuk98@gmail.com*
-===
+********
 **Induction:** Hello World
-===
+********
 **Skills:** HTML, CSS, JS, C, Python
-===
+****
 **Code example:**
 
 ```
