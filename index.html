@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__info">
+          <h1 class="header__title">ANASTASIA KONDRATYUK</h1>
+          <span class="header__description">JUNIOR FRONTEND DEVELOPER</span>
+        </div>
+        <nav class="header__menu">
+          <ul class="header__menu-list">
+            <li class="header__menu-item">
+              <a href="#profile" class="header__menu-link">Profile</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#skills" class="header__menu-link">Skills </a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#education" class="header__menu-link">Education</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#code-ex" class="header__menu-link">Code</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section class="profile" id="profile">
+        <div class="profile__info">
+          <h2 class="section-title">PROFILE</h2>
+          <p class="profile__description">
+            I have been working as a financial analyst in a big international
+            company for 3 years, but now I am passionate about studying IT
+            technologies and would like to dedicate my further career pass to
+            it. I adore logical sides of processes and want to invent bright
+            solutions for business.
+          </p>
+        </div>
+        <div class="profile__picture">
+          <img src="./assets/profile.jpg" alt="avatar" class="profile__img" />
+        </div>
+      </section>
+      <div class="content">
+        <main class="main">
+          <section class="skills" id="skills">
+            <h2 class="section-title">SKILLS</h2>
+            <ul class="skills__list">
+              <li class="skills__item">
+                <span class="skills__name">HTML</span>
+                <div class="skills__progress skills__progress_html"></div>
+              </li>
+              <li class="skills__item">
+                <span class="skills__name">CSS</span>
+                <div class="skills__progress skills__progress_css"></div>
+              </li>
+              <li class="skills__item">
+                <span class="skills__name">Javascript</span>
+                <div class="skills__progress skills__progress_js"></div>
+              </li>
+              <li class="skills__item">
+                <span class="skills__name">C</span>
+                <div class="skills__progress skills__progress_c"></div>
+              </li>
+              <li class="skills__item">
+                <span class="skills__name">Git</span>
+                <div class="skills__progress skills__progress_git"></div>
+              </li>
+            </ul>
+          </section>
+          <section class="education" id="education">
+            <h2 class="section-title">EDUCATION</h2>
+            <span class="education__date">2015 - 2020</span>
+            <p class="education__description">
+              Belarusian National Technical University, Project-Management
+            </p>
+          </section>
+          <section class="code" id="code-ex">
+            <h2 class="section-title">CODE</h2>
+            <pre><code class="hljs javascript" id='code'>function filterRangeInPlace(arr, a, b) {
+                arr.forEach((item, index) =>
+                  item &lt;= b && item >= a ? item : arr.splice(index, 1));
+                return arr;}</code></pre>
+          </section>
+        </main>
+        <aside class="aside">
+          <h2 class="section-title">INFO</h2>
+          <ul class="aside__list">
+            <li class="aside__item"><strong>Age</strong><span>23</span></li>
+            <li class="aside__item"><strong>English</strong><span>B2</span></li>
+            <li class="aside__item"><strong>German</strong><span>B1</span></li>
+            <li class="aside__item">
+              <strong>Gender</strong><span>Female</span>
+            </li>
+          </ul>
+          <h2 class="section-title">CONNECT</h2>
+          <ul class="aside__list">
+            <li class="aside__item">
+              <img
+                src="./assets/telegram.png"
+                alt="icon"
+                class="aside__item-icon"
+              /><span>@kndr_anastasia</span>
+            </li>
+          </ul>
+          <h2 class="section-title">PROJECTS</h2>
+          <ul class="aside__list">
+            <li class="aside__item">
+              <a
+                href="http://127.0.0.1:5500/rsschool-cv/index.html"
+                class="projects-link"
+                >CV</a
+              >
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <footer class="footer">
+        2022 ©
+        <a href="https://rs.school/js/" class="footer__logo-link"
+          ><img
+            src="https://rollingscopes.com/images/logo_rs2.svg
+          "
+            alt="logo"
+            class="footer__logo"
+        /></a>
+        <a href="https://github.com/Nastassia228" class="footer__link"
+          >Nastassia228</a
+        >
+      </footer>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
