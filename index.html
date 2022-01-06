@@ -37,7 +37,7 @@
               <a href="#education" class="header__menu-link">Education</a>
             </li>
             <li class="header__menu-item">
-              <a href="#code" class="header__menu-link">Code</a>
+              <a href="#code-ex" class="header__menu-link">Code</a>
             </li>
           </ul>
         </nav>
@@ -91,11 +91,11 @@
               Belarusian National Technical University, Project-Management
             </p>
           </section>
-          <section class="code" id="code">
+          <section class="code" id="code-ex">
             <h2 class="section-title">CODE</h2>
             <pre><code class="hljs javascript" id='code'>function filterRangeInPlace(arr, a, b) {
                 arr.forEach((item, index) =>
-                  item <= b && item >= a ? item : arr.splice(index, 1));
+                  item &lt= b && item >= a ? item : arr.splice(index, 1));
                 return arr;}</code></pre>
           </section>
         </main>
@@ -117,6 +117,16 @@
                 alt="icon"
                 class="aside__item-icon"
               /><span>@kndr_anastasia</span>
+            </li>
+          </ul>
+          <h2 class="section-title">PROJECTS</h2>
+          <ul class="aside__list">
+            <li class="aside__item">
+              <a
+                href="http://127.0.0.1:5500/rsschool-cv/index.html"
+                class="projects-link"
+                >CV</a
+              >
             </li>
           </ul>
         </aside>
